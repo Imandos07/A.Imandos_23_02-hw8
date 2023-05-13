@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+function Layout({ children }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <nav>
+          {children}
+        </nav>
       </header>
+      <main>
+        {children[1]}
+      </main>
+      <footer>
+        © 2023 My Website
+      </footer>
     </div>
   );
 }
 
+function App() {
+  return (
+    <Layout>
+      <h1>My Website</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <p>Welcome to my website!</p>
+    </Layout>
+  );
+}
+
 export default App;
+
+// import React from "react";
+
+// function Button({ onClick, children }) {
+//   return (
+//     <button onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// }
+
+// function App() {
+//   function handleClick() {
+//     alert("Button clicked!");
+//   }
+
+//   return (
+//     <div>
+//       <Button onClick={handleClick}>
+//         Click me!
+//       </Button>
+//     </div>
+//   );
+// }
+
+// export default App;
